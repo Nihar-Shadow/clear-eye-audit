@@ -298,14 +298,14 @@ const FileUpload = ({ onDataLoaded }: FileUploadProps) => {
                   <span className="text-muted-foreground text-xs">(optional)</span>
                 </Label>
                 <Select
-                  value={mapping.description || ''}
-                  onValueChange={(value) => setMapping(prev => ({ ...prev, description: value }))}
+                  value={mapping.description || '__none__'}
+                  onValueChange={(value) => setMapping(prev => ({ ...prev, description: value === '__none__' ? undefined : value }))}
                 >
                   <SelectTrigger>
                     <SelectValue placeholder="Select column..." />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">None</SelectItem>
+                    <SelectItem value="__none__">None</SelectItem>
                     {csvHeaders.map(header => (
                       <SelectItem key={header} value={header}>
                         {header}
