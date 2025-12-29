@@ -1,5 +1,6 @@
 import { Shield, Activity, Bell } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import ThemeToggle from './ThemeToggle';
 
 interface HeaderProps {
   criticalAlerts?: number;
@@ -7,12 +8,12 @@ interface HeaderProps {
 
 const Header = ({ criticalAlerts = 0 }: HeaderProps) => {
   return (
-    <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
+    <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50 transition-colors duration-300">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-primary/10 rounded-lg">
+              <div className="p-2 bg-primary/10 rounded-lg transition-colors duration-300">
                 <Shield className="w-6 h-6 text-primary" />
               </div>
               <div>
@@ -26,7 +27,7 @@ const Header = ({ criticalAlerts = 0 }: HeaderProps) => {
             </div>
           </div>
           
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Activity className="w-4 h-4 text-risk-normal" />
               <span>System Active</span>
@@ -40,6 +41,8 @@ const Header = ({ criticalAlerts = 0 }: HeaderProps) => {
                 </Badge>
               </div>
             )}
+            
+            <ThemeToggle />
           </div>
         </div>
       </div>
