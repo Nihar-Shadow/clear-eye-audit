@@ -6,6 +6,65 @@
 
 @layer base {
   :root {
+    /* Light Theme */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 217 91% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 214 32% 91%;
+    --muted-foreground: 215 20% 45%;
+
+    --accent: 214 32% 91%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 85%;
+    --input: 214 32% 85%;
+    --ring: 217 91% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom Risk Colors */
+    --risk-critical: 0 72% 51%;
+    --risk-review: 38 92% 50%;
+    --risk-normal: 142 71% 45%;
+
+    /* Accent colors */
+    --accent-blue: 217 91% 50%;
+    --accent-cyan: 186 91% 40%;
+    --accent-purple: 258 90% 56%;
+
+    /* Chart colors */
+    --chart-1: 217 91% 50%;
+    --chart-2: 186 91% 40%;
+    --chart-3: 142 71% 45%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 72% 51%;
+
+    --sidebar-background: 210 40% 96%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 217 91% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 214 32% 91%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 85%;
+    --sidebar-ring: 217 91% 50%;
+  }
+
+  .dark {
     /* Government/Institutional Dark Theme */
     --background: 222 47% 6%;
     --foreground: 210 40% 96%;
@@ -35,19 +94,17 @@
     --input: 217 33% 18%;
     --ring: 217 91% 60%;
 
-    --radius: 0.5rem;
-
-    /* Custom Risk Colors */
+    /* Custom Risk Colors - Dark */
     --risk-critical: 0 72% 51%;
     --risk-review: 38 92% 50%;
     --risk-normal: 142 71% 45%;
 
-    /* Accent colors */
+    /* Accent colors - Dark */
     --accent-blue: 217 91% 60%;
     --accent-cyan: 186 91% 45%;
     --accent-purple: 258 90% 66%;
 
-    /* Chart colors */
+    /* Chart colors - Dark */
     --chart-1: 217 91% 60%;
     --chart-2: 186 91% 45%;
     --chart-3: 142 71% 45%;
@@ -63,37 +120,19 @@
     --sidebar-border: 217 33% 18%;
     --sidebar-ring: 217 91% 60%;
   }
-
-  .dark {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 96%;
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 96%;
-    --popover: 222 47% 10%;
-    --popover-foreground: 210 40% 96%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 222 47% 6%;
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 96%;
-    --muted: 217 33% 14%;
-    --muted-foreground: 215 20% 55%;
-    --accent: 217 33% 20%;
-    --accent-foreground: 210 40% 96%;
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217 33% 18%;
-    --input: 217 33% 18%;
-    --ring: 217 91% 60%;
-  }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border transition-colors duration-300;
+  }
+
+  html {
+    @apply scroll-smooth;
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased transition-colors duration-300;
     font-family: 'IBM Plex Sans', sans-serif;
   }
 
