@@ -58,56 +58,62 @@ const Index = () => {
       <main className="container mx-auto px-6 py-8">
         {/* Hero Section when no data */}
         {transactions.length === 0 && (
-          <div className="mb-12 text-center animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
-              <Shield className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium">AI-Powered Fraud Detection</span>
+          <div className="mb-16 text-center animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary/10 rounded-full mb-8 border border-primary/20 animated-border">
+              <Shield className="w-4 h-4 text-primary animate-pulse" />
+              <span className="text-sm font-semibold tracking-wide">AI-Powered Fraud Detection</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight">
               Detect Anomalies in{' '}
-              <span className="text-gradient">Public Transactions</span>
+              <span className="text-gradient block mt-2">Public Transactions</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
               Upload government transaction data and let our AI identify potential fraud, 
               duplicate payments, and suspicious patterns with full explainability.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mb-12">
-              <div className="p-6 bg-card/50 rounded-lg border border-border">
-                <Brain className="w-8 h-8 text-primary mb-3" />
-                <h3 className="font-semibold mb-2">AI Anomaly Detection</h3>
-                <p className="text-sm text-muted-foreground">
-                  Isolation Forest algorithm identifies outliers in your data
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
+              <div className="feature-card group animate-slide-up" style={{ animationDelay: '100ms' }}>
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Brain className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2">AI Anomaly Detection</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Isolation Forest algorithm identifies statistical outliers and unusual patterns in your transaction data
                 </p>
               </div>
-              <div className="p-6 bg-card/50 rounded-lg border border-border">
-                <Zap className="w-8 h-8 text-risk-review mb-3" />
-                <h3 className="font-semibold mb-2">5 Fraud Rules</h3>
-                <p className="text-sm text-muted-foreground">
-                  Duplicate payments, excessive amounts, shared accounts & more
+              <div className="feature-card group animate-slide-up" style={{ animationDelay: '200ms' }}>
+                <div className="w-14 h-14 rounded-xl bg-risk-review/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Zap className="w-7 h-7 text-risk-review" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2">5 Fraud Rules</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Duplicate payments, excessive amounts, shared bank accounts, high-frequency vendors & more
                 </p>
               </div>
-              <div className="p-6 bg-card/50 rounded-lg border border-border">
-                <Shield className="w-8 h-8 text-risk-normal mb-3" />
-                <h3 className="font-semibold mb-2">Full Explainability</h3>
-                <p className="text-sm text-muted-foreground">
-                  Understand exactly why each transaction was flagged
+              <div className="feature-card group animate-slide-up" style={{ animationDelay: '300ms' }}>
+                <div className="w-14 h-14 rounded-xl bg-risk-normal/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Shield className="w-7 h-7 text-risk-normal" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Full Explainability</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Understand exactly why each transaction was flagged with clear, human-readable explanations
                 </p>
               </div>
             </div>
           </div>
         )}
 
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="bg-muted/50 p-1">
-            <TabsTrigger value="upload" className="flex items-center gap-2">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
+          <TabsList className="bg-muted/30 p-1.5 backdrop-blur-sm border border-border/50 rounded-xl">
+            <TabsTrigger value="upload" className="flex items-center gap-2 rounded-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-200">
               <Upload className="w-4 h-4" />
               Upload Data
             </TabsTrigger>
             <TabsTrigger 
               value="dashboard" 
               disabled={transactions.length === 0}
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 rounded-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-200"
             >
               <BarChart3 className="w-4 h-4" />
               Dashboard
@@ -115,7 +121,7 @@ const Index = () => {
             <TabsTrigger 
               value="transactions" 
               disabled={transactions.length === 0}
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 rounded-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-200"
             >
               <Table2 className="w-4 h-4" />
               Transactions
@@ -156,10 +162,18 @@ const Index = () => {
       </main>
       
       {/* Footer */}
-      <footer className="border-t border-border py-6 mt-12">
-        <div className="container mx-auto px-6 text-center text-sm text-muted-foreground">
-          <p>FraudShield AI • Public Transaction Anomaly Detection System</p>
-          <p className="mt-1">Demo for Government Audit Hackathon 2024</p>
+      <footer className="border-t border-border/50 py-8 mt-16 bg-card/30">
+        <div className="container mx-auto px-6 text-center">
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <Shield className="w-5 h-5 text-primary" />
+            <span className="font-semibold">FraudShield AI</span>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            Public Transaction Anomaly Detection System
+          </p>
+          <p className="text-xs text-muted-foreground/60 mt-2">
+            Demo for Government Audit Hackathon 2024
+          </p>
         </div>
       </footer>
     </div>
