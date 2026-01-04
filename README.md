@@ -3,6 +3,8 @@
 **Public Transaction Anomaly Detection System**
 
 FraudShield AI is a specialized tool designed for government auditors to detect anomalies, potential fraud, and suspicious patterns in public transaction data. It combines AI-powered anomaly detection (Isolation Forest) with rule-based heuristics to identify high-risk transactions with 100% explainability.
+ 
+ **[Live Demo](https://cleareyeaudit.netlify.app/)**
 
 ## ✨ Features
 
