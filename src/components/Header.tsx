@@ -14,7 +14,7 @@ const Header = ({ criticalAlerts = 0 }: HeaderProps) => {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-primary/10 rounded-lg transition-colors duration-300">
-                <Shield className="w-6 h-6 text-primary" />
+                <img src="/logo.png" alt="FraudShield AI Logo" className="w-8 h-8 object-contain" />
               </div>
               <div>
                 <h1 className="text-xl font-semibold text-foreground tracking-tight">
@@ -26,13 +26,13 @@ const Header = ({ criticalAlerts = 0 }: HeaderProps) => {
               </div>
             </div>
           </div>
-          
+
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Activity className="w-4 h-4 text-risk-normal" />
               <span>System Active</span>
             </div>
-            
+
             {criticalAlerts > 0 && (
               <div className="flex items-center gap-2">
                 <Bell className="w-5 h-5 text-risk-critical animate-pulse" />
@@ -41,7 +41,7 @@ const Header = ({ criticalAlerts = 0 }: HeaderProps) => {
                 </Badge>
               </div>
             )}
-            
+
             <ThemeToggle />
           </div>
         </div>
