@@ -1,73 +1,70 @@
-# Welcome to your Lovable project
+# FraudShield AI (Clear Eye Audit)
 
-## Project info
+**Public Transaction Anomaly Detection System**
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+FraudShield AI is a specialized tool designed for government auditors to detect anomalies, potential fraud, and suspicious patterns in public transaction data. It combines AI-powered anomaly detection (Isolation Forest) with rule-based heuristics to identify high-risk transactions with 100% explainability.
 
-## How can I edit this code?
+## ✨ Features
 
-There are several ways of editing your application.
+- **AI Anomaly Detection**: Uses Isolation Forest algorithm to identify statistical outliers in transaction data.
+- **Rule-Based Detection**: Automatically flags transactions based on 5 key fraud patterns:
+  - Duplicate payments
+  - Excessive amounts (deviations from department averages)
+  - Shared accounts (vendor/beneficiary overlap)
+  - Round dollar amounts (suspicious round numbers)
+  - Weekend/Holiday transactions
+- **Full Explainability**: "Glass-box" AI approach – understand exactly *why* a transaction was flagged (e.g., "Amount is 3.5x higher than department average").
+- **Auditor Workflow**: 
+  - Upload transaction datasets (CSV/JSON).
+  - Review critical alerts and risk scores.
+  - Annotate cases (Mark for Review, Clear, Escalate).
+  - Track review history.
+- **Interactive Dashboard**: Visualizes risk distribution, critical alerts, and department-wise analysis.
 
-**Use Lovable**
+## 🛠️ Technology Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- **Frontend**: React, TypeScript, Vite
+- **UI Framework**: Tailwind CSS, shadcn-ui
+- **Icons**: Lucide React
+- **Charts**: Recharts
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js & npm installed
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Installation
 
-Follow these steps:
+1.  Clone the repository:
+    ```sh
+    git clone <repository-url>
+    cd clear-eye-audit
+    ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2.  Install dependencies:
+    ```sh
+    npm install
+    ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3.  Start the development server:
+    ```sh
+    npm run dev
+    ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+4.  Open your browser at `http://localhost:8080` (or the port shown in your terminal).
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 📖 Usage
 
-**Edit a file directly in GitHub**
+1.  **Upload Data**: Go to the "Upload Data" tab and drop your transaction dataset.
+2.  **View Dashboard**: Check the "Dashboard" tab for high-level stats and critical alerts.
+3.  **Analyze Transactions**: Switch to the "Transactions" tab. Click on any high-risk transaction to open the **Explainability Panel**.
+4.  **Take Action**: Use the panel to review the AI score breakdown, checking triggered rules, and adding auditor notes.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🛡️ Privacy & Security
 
-**Use GitHub Codespaces**
+This tool is designed for **internal government audit use**. Ensure that any uploaded data complies with your organization's data handling policies. The current version runs client-side processing for demonstration purposes.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+*Demo for Government Audit Hackathon 2024*
